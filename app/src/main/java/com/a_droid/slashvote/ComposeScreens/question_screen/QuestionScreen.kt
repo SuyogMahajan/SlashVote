@@ -62,6 +62,7 @@ fun QuestionScreen(viewModel: MainViewModel, navController: NavController) {
         Button(
             onClick = {
                if(text.isNotEmpty()) {
+                   viewModel.choices_screen_view_model.question = text
                    text = ""
                    navController.navigate(Screens.ChoicesScreen.route)
                }else{

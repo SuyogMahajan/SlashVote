@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:711355489260:android:c9f6f0cbc68441f0e0fec9",
+        "mobilesdk_app_id": "1:711355489260:android:e37564fd3fb0cfe8e0fec9",
         "android_client_info": {
-          "package_name": "com.a_droid.slash_viote"
+          "package_name": "com.a_droid.slashvote"
         }
       },
       "oauth_client": [
         {
-          "client_id": "711355489260-f05tid8cavtp232h0sqse2b3nb67veq9.apps.googleusercontent.com",
+          "client_id": "711355489260-did9eui30cuhm5h41g88sevp0tead71b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.a_droid.slash_viote",
+            "package_name": "com.a_droid.slashvote",
             "certificate_hash": "cdab31609abba994e24bc0735fbd295cc06fecaf"
           }
         },
@@ -45,9 +45,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:711355489260:android:ce79d6bddc7d618ae0fec9",
+        "mobilesdk_app_id": "1:711355489260:android:a698c166032880f2e0fec9",
         "android_client_info": {
-          "package_name": "com.example.slashvote"
+          "package_name": "com.a_droid.slashvote"
         }
       },
       "oauth_client": [

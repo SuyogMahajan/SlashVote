@@ -15,9 +15,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.a_droid.slashvote.ComposeScreens.MainViewModel
 import com.a_droid.slashvote.ui.theme.SlashVoteTheme
+import com.slashvote.slashvote.ComposeScreens.choices_screen.ChoicesScreen
 import com.slashvote.slashvote.ComposeScreens.home_screen.HomeScreen
 import com.slashvote.slashvote.ComposeScreens.otp_screen.OtpScreen
 import com.slashvote.slashvote.ComposeScreens.question_screen.QuestionScreen
+import com.slashvote.slashvote.ComposeScreens.result_screen.ResultScreen
+import com.slashvote.slashvote.ComposeScreens.statics_screen.StaticsScreen
+import com.slashvote.slashvote.ComposeScreens.voting_screen.VotingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +51,27 @@ class MainActivity : ComponentActivity() {
                     ) {
                         OtpScreen(viewModel = mainViewModel, navController = navController)
                     }
+                    composable(
+                        Screens.ChoicesScreen.route
+                    ) {
+                        ChoicesScreen(viewModel = mainViewModel, navController = navController)
+                    }
+                    composable(
+                        Screens.StaticsScreen.route
+                    ) {
+                        StaticsScreen(viewModel = mainViewModel, navController = navController)
+                    }
+                    composable(
+                        Screens.VotingScreen.route
+                    ) {
+                        VotingScreen(viewModel = mainViewModel,navController = navController)
+                    }
 
+                    composable(
+                        Screens.ResultScreen.route
+                    ) {
+                        ResultScreen(navController = navController,viewModel = mainViewModel)
+                    }
                 }
 
 

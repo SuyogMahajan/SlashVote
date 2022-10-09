@@ -20,7 +20,7 @@ import com.a_droid.slashvote.ComposeScreens.MainViewModel
 import com.a_droid.slashvote.Screens
 import com.a_droid.slashvote.ui.theme.LightBlue
 import com.a_droid.slashvote.ui.theme.fontFamily
-import com.example.slashvote.R
+import com.a_droid.slashvote.R
 import com.slashvote.slashvote.data.FirebaseOption
 import com.slashvote.slashvote.data.Option
 import com.slashvote.slashvote.data.firebaseDataBase
@@ -28,6 +28,8 @@ import com.slashvote.slashvote.data.firebaseDataBase
 @Composable
 fun OtpScreen(viewModel: MainViewModel, navController: NavController) {
     val otp = viewModel.otp_screen_view_model.OTP
+    val question = viewModel.voting_screen_view_model.question
+    val option = viewModel.voting_screen_view_model.option
 
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -83,6 +85,9 @@ fun OtpScreen(viewModel: MainViewModel, navController: NavController) {
                             if(it.value == null) {
                                  Toast.makeText(context,"Please Enter valid OTP.",Toast.LENGTH_LONG).show()
                             }else {
+                                viewModel.otp_screen_view_model.OTP.value = Otp
+                                question.value = it.child("question").value as String
+
                                 val options = it.child("Choices")
                                 val list = HashMap<String,Option>()
 
@@ -90,7 +95,7 @@ fun OtpScreen(viewModel: MainViewModel, navController: NavController) {
                                     val c = dataSnap.getValue(FirebaseOption::class.java)
                                     list.put(dataSnap.key.toString(),Option(c!!.option, 0f))
                                 }
-
+                                option.value = list
                                 navController.navigate(Screens.VotingScreen.route)
                             }
                         }.addOnFailureListener {
