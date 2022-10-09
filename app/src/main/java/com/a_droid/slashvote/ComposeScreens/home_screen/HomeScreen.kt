@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.a_droid.slashvote.Screens
 import com.a_droid.slashvote.ui.theme.LightBlue
 import com.a_droid.slashvote.ui.theme.LightGreen
 import com.a_droid.slashvote.ui.theme.fontFamily
@@ -34,7 +35,7 @@ fun HomeScreen(
                     .weight(1f)
                     .fillMaxSize(), colors = LightBlue,
                 onClick = {
-
+                    navController.navigate(Screens.QuestionScreen.route)
                 }
             )
 
@@ -42,8 +43,9 @@ fun HomeScreen(
                 title = "Vote", modifier = Modifier
                     .weight(1f)
                     .fillMaxSize(), colors = LightGreen, onClick = {
+                    navController.navigate(Screens.OtpScreen.route)
 
-                       }
+                }
             )
 
         }

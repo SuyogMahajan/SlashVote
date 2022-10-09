@@ -16,6 +16,8 @@ import androidx.navigation.compose.rememberNavController
 import com.a_droid.slashvote.ComposeScreens.MainViewModel
 import com.a_droid.slashvote.ui.theme.SlashVoteTheme
 import com.slashvote.slashvote.ComposeScreens.home_screen.HomeScreen
+import com.slashvote.slashvote.ComposeScreens.otp_screen.OtpScreen
+import com.slashvote.slashvote.ComposeScreens.question_screen.QuestionScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,18 @@ class MainActivity : ComponentActivity() {
 
                     composable(Screens.HomeScreen.route) {
                         HomeScreen(navController = navController)
+                    }
+
+                    composable(
+                        Screens.QuestionScreen.route
+                    ) {
+                        QuestionScreen(viewModel = mainViewModel, navController = navController)
+                    }
+
+                    composable(
+                        Screens.OtpScreen.route
+                    ) {
+                        OtpScreen(viewModel = mainViewModel, navController = navController)
                     }
 
                 }
