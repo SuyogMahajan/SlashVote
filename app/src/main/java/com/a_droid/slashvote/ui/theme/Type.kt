@@ -1,4 +1,4 @@
-package com.example.slashvote.ui.theme
+package com.a_droid.slashvote.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

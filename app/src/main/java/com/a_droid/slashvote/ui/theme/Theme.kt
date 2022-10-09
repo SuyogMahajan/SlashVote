@@ -1,4 +1,4 @@
-package com.example.slashvote.ui.theme
+package com.a_droid.slashvote.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

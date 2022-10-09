@@ -1,4 +1,4 @@
-package com.example.slashvote
+package com.a_droid.slashvote
 
 import org.junit.Test
 
