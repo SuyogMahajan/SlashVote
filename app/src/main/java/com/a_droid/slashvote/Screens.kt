@@ -1,4 +1,4 @@
-package com.slashvote.slashvote
+package com.a_droid.slashvote
 
 sealed class Screens(val route:String){
 

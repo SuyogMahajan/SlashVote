@@ -10,34 +10,34 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.a_droid.slashvote.ComposeScreens.MainViewModel
 import com.a_droid.slashvote.ui.theme.SlashVoteTheme
+import com.slashvote.slashvote.ComposeScreens.home_screen.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             SlashVoteTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                val navController = rememberNavController()
+                val mainViewModel = MainViewModel()
+
+                NavHost(
+                    navController = navController,
+                    startDestination = Screens.HomeScreen.route
                 ) {
-                    Greeting("Android")
+
+                    composable(Screens.HomeScreen.route) {
+                        HomeScreen(navController = navController)
+                    }
+
                 }
+
+
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    SlashVoteTheme {
-        Greeting("Android")
     }
 }
